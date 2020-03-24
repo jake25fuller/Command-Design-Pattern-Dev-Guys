@@ -2,7 +2,7 @@
  * Adam Farley
  * LoadCommand.java sets the object of the document and overwrites the execute
  */
-public class LoadCommand{
+public class LoadCommand implements Command {
     private Document doc;
 
     public SpellCommand(Document doc){
