@@ -1,14 +1,13 @@
-import java.util.*;
-import java.io.*;
+package csce247.assignments.command;
 
 public class PrintCommand implements Command {
 	private Document doc;
 
-	public SaveCommand(Document doc) {
+	public PrintCommand(Document doc) {
 		this.doc = doc;
 	}
 
-	public void execute() {
+	public void Execute() {
 		doc.Print();
 	}
 

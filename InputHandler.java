@@ -7,17 +7,17 @@ import java.util.*;
 
 public class InputHandler {
 
-	HashMap commands = new HashMap();
+	HashMap<String, Command> commands = new HashMap<String, Command>();
 	/**
 	 * initializes the HashMap to execute certain commands from on the document when certain strings are entered
 	 * @param Document document
 	 */
 	public InputHandler(Document document)
 	{
-		commands.put("load", document.LoadCommand());
-		commands.put("save", document.SaveCommand());
-		commands.put("spell", document.SpellCheckCommand());
-		commands.put("print", document.PrintCommand());
+		commands.put("load", new LoadCommand(document));
+		commands.put("save", new SaveCommand(document));
+		commands.put("spell", new SpellCommand(document));
+		commands.put("print", new PrintCommand(document));
 	}
 	
 	/**
@@ -26,6 +26,6 @@ public class InputHandler {
 	 */
 	public void inputEntered(String data)
 	{
-		commands.get(data);
+		commands.get(data).Execute();
 	}
 }

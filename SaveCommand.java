@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+package csce247.assignments.command;
 
 public class SaveCommand implements Command {
 	private Document doc;
@@ -8,7 +7,7 @@ public class SaveCommand implements Command {
 		this.doc = doc;
 	}
 
-	public void execute() {
+	public void Execute() {
 		doc.Save();
 	}
 
